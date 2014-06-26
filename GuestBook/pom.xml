@@ -14,6 +14,7 @@
 		<org.slf4j-version>1.6.6</org.slf4j-version>
 	</properties>
 	<dependencies>
+		
 		<!-- Spring -->
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -27,6 +28,7 @@
 				 </exclusion>
 			</exclusions>
 		</dependency>
+		
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
@@ -115,8 +117,60 @@
 			<artifactId>junit</artifactId>
 			<version>4.7</version>
 			<scope>test</scope>
-		</dependency>        
+		</dependency>     
+		
+		<!--  추가 부분  시작 -->
+		<!-- spring jdbc: 스프링과 jdbc 연결 라이브러리 -->
+		<dependency>
+		   <groupId>org.springframework</groupId>
+		   <artifactId>spring-jdbc</artifactId>
+		   <version>${org.springframework-version}</version>
+		</dependency>
+		
+		<!-- MyBatis: 마이바티스 라이브러리 -->
+		<dependency>
+		   <groupId>org.mybatis</groupId>
+		   <artifactId>mybatis</artifactId>
+		   <version>3.2.6</version>
+		</dependency>
+		
+		<!-- MyBatis Spring: 마이바티스와 스프링 연결 라이브러리 -->
+		<dependency>
+		   <groupId>org.mybatis</groupId>
+		   <artifactId>mybatis-spring</artifactId>
+		   <version>1.2.2</version>
+		</dependency>
+		
+		<!-- commons dbcp: dbcp 라이브러리 -->
+		<dependency>
+		   <groupId>commons-dbcp</groupId>
+		   <artifactId>commons-dbcp</artifactId>
+		   <version>1.4</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>cubrid</groupId>
+			<artifactId>cubrid-jdbc</artifactId>
+			<version>9.3.0.0206</version>
+		</dependency>
+		
+		<!--  추가 부분  끝 -->
+		   
 	</dependencies>
+	
+	<repositories>
+	   <repository>
+	   	  <id>cubrid.release.repository</id>
+		  <url>http://maven.cubrid.org</url>
+		  <releases>
+		  	<enabled>true</enabled>
+		  </releases>
+		  <snapshots>
+		  	<enabled>false</enabled>
+		  </snapshots>
+	   </repository>
+   </repositories>
+	   
     <build>
         <plugins>
             <plugin>
