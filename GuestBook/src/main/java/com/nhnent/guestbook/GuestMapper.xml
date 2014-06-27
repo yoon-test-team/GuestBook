@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nhnent.guestbook.GuestMapper">
+	
+    <select id="selectAll" resultType="Guest">
+    	select * from guestbook
+  	</select>
+  	
+  	<insert id="insert" parameterType="Article">
+		INSERT INTO guestbook (	writer, email, pwd, contents, regdt, moddt)
+		VALUES ( #{writer}, #{email}, #{pwd}, #{contents}, SYS_TIMESTAMP,SYS_TIMESTAMP )
+	</insert>
+  	
+  	<update id="update" parameterType="Article">
+		UPDATE guestbook 
+		   SET title=#{title},
+		       contents=#{contents},
+		       moddt = SYS_TIMESTAMP
+	   	 WHERE idx = #{idx}
+	   	   AND pwd = #{pwd}
+	</update>
+	
+	<delete id="delete" parameterType="int">
+		DELETE FROM guestbook WHERE idx = #{idx}
+	</delete>
+  	
+</mapper>

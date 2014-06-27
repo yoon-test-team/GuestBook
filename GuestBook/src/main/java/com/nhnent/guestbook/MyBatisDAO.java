@@ -1,6 +1,4 @@
 package com.nhnent.guestbook;
-import cubrid.jdbc.driver.*;
-import cubrid.sql.*; 
 import org.apache.ibatis.logging.Log;
 import org.apache.ibatis.logging.LogFactory;
 import org.apache.ibatis.session.SqlSession;
