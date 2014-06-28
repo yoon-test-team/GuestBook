@@ -21,17 +21,13 @@
 <h1>
 GuestBook  
 </h1>
-
-<P>  The time on the server is ${serverTime}. </P>
-
 <table>
-<!--  반복 구간 시작 -->
+
 	<c:forEach var="article" items="${list }">	
 	<tr>
-		<td style="text-align: center;">test</td>
+		<td style="text-align: center;">${article.writer }</td>
 	</tr>
 	</c:forEach>
-<!--  반복 구간 끝 -->
 </table>
 
 </body>

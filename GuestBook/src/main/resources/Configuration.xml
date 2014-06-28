@@ -8,7 +8,6 @@
   
   <!--ibatis : SqlMap, myBatis : configuration-->
   <typeAliases>
-    <!--  <typeAlias alias="Mybatis" type="com.nhnent.guestbook.MybatisVO"/>-->
     <typeAlias alias="Guest" type="com.nhnent.guestbook.Guest" />
   </typeAliases>
   
@@ -28,7 +27,6 @@
     mapper.xml : query define
   -->
   <mappers>
-    <!--  <mapper resource="com/nhnent/guestbook/MybatisMapper.xml"/> -->
     <mapper resource="com/nhnent/guestbook/GuestMapper.xml"/>
   
   </mappers>

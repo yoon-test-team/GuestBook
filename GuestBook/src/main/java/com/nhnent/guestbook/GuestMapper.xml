@@ -6,12 +6,12 @@
     	select * from guestbook
   	</select>
   	
-  	<insert id="insert" parameterType="Article">
+  	<insert id="insert" parameterType="Guest">
 		INSERT INTO guestbook (	writer, email, pwd, contents, regdt, moddt)
 		VALUES ( #{writer}, #{email}, #{pwd}, #{contents}, SYS_TIMESTAMP,SYS_TIMESTAMP )
 	</insert>
   	
-  	<update id="update" parameterType="Article">
+  	<update id="update" parameterType="Guest">
 		UPDATE guestbook 
 		   SET title=#{title},
 		       contents=#{contents},
