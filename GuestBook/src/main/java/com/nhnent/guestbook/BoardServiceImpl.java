@@ -8,12 +8,10 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 public class BoardServiceImpl implements BoardService {
 	
-	public  ArrayList<Guest> getList() {
-		ArrayList<Guest> list = new ArrayList<Guest>();
-		list.add(new BoardDAO().getList());
-		return list;
+	
+	public  List<Guest> getList() {
+		return new BoardDAO().getList();
 	}
-				
 	
 	public void insert(Guest item) {
 	//	boardMapper.insert(item);

@@ -5,8 +5,7 @@ import java.util.Date;
 public class Guest {
 	
 	private int idx;					// 방명록 글 ID
-	private String writer;			// 작성자
-	private String title;			// 제목
+	private String name;			// 작성자
 	private String contents;		// 내용
 	private String email;			// 이메일
 	private String pwd;				// 비밀번호
@@ -23,21 +22,21 @@ public class Guest {
 		this.idx = idx;
 	}
 	
-	public String getWriter() {
-		return writer;
+	public String getName() {
+		return name;
 	}
-	public void setWriter(String writer) {
-		this.writer = writer;
-	}
-	
-	public String getTitle() {
-		return title;
-	}
-	public void setTitle(String title) {
-		this.title = title;
+	public void setName(String name) {
+		this.name = name;
 	}
 	
-	public String gteContents() {
+	public String getPwd() {
+		return pwd;
+	}
+	public void setPwd(String pwd) {
+		this.pwd = pwd;
+	}
+	
+	public String getContents() {
 		if (contents != null) {
 			return contents.replaceAll(ENTER, "<br />");
 		} 
@@ -56,10 +55,6 @@ public class Guest {
 		this.email = email;
 	}
 	
-	
-	public void setPwd(String pwd) {
-		this.pwd = pwd;
-	}
 	
 	public Date getRegdate() {
 		return regdate;

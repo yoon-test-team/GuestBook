@@ -1,0 +1,69 @@
+@charset "utf-8";
+/* 반드시 들어가야 하는 스타일 시작 */
+
+/* 본문 공통 */
+body{
+		font:12px/1.5 Dotum, Verdana, AppleGothic, Sans-serif;
+		color:#666;
+		margin: 0; padding: 0;
+}
+a:link          { color:#222;     text-decoration:none;}
+a:visited       { color:#222;     text-decoration:none;}
+a:hover         { color:#222;  text-decoration:underline;}
+a:active        { color:#222;     text-decoration:none;}
+
+/* 종류별 방명록 글 [##_guest_rep_class_##] */
+	.guest_general          { }
+	.guest_admin            { background:url(images/iconAdmin.gif) no-repeat; padding-left:20px;}
+/* 비밀 댓글 (로그아웃시 비밀글 표현)    */
+	.hiddenComment { background:url(images/iconSecret.gif) no-repeat;  padding-left:20px;  font-weight:normal;}
+
+/* 반드시 들어가야하는 스타일 끝 - 이 아래는 자유롭게 추가, 삭제 가능 */
+
+hr              { display:none;}
+img             { border:0;}
+h1, h2, h3, h4  { margin:0;  padding:0;}
+h1              { font-size:1.6em;}
+h2              { font-size:1.4em;
+border-bottom: 1px solid #DDD;
+padding-bottom: 10px;
+padding-top: 20px;
+}
+h3              { font-size:1.2em;
+border-bottom: 1px solid #DDD;
+padding-bottom: 10px;
+padding-top: 20px;
+}
+h4              { font-size:1em;}
+input, textarea { font: 1em dotum; }
+input { height: 16px; }
+table { border-collapse: collapse; border-spacing: 0; }
+
+#guestWrite                 { width:/*@post-width:-50=*/ 600px /*@*/;padding:15px;  background-color:#f5f5f5;  border:1px solid #ddd;}
+#guestWrite p                { clear: both; padding: 0; margin:0;}
+#guestWrite p.writerInfo label  { width: 80px; float: left; font: 0.85em verdana; padding-top: 2px; vertical-align: middle;  }
+#guestWrite p.writerInfo input  { float: left; width:150px; border: 1px solid #d1d3d4; vertical-align: middle; margin-bottom: 5px; padding: 2px 0 0 8px; }
+#guestWrite textarea            { width:/*@post-width:-44=*/ 600px /*@*/;  padding: 5px; border: 1px solid #d1d3d4; }
+#guestWrite .email           { width: /*@post-width:-180=*/ 470px /*@*/ !important; font: 0.85em verdana; color: #999; height: 16px; }
+#guestWrite input.submit        { width: 79px; height: 29px; display: block; margin: 5px auto 0; text-indent: -1000em; border: none; cursor: pointer; }
+
+#guestList                  { padding:10px 0 0 0;}
+#guestList ol,
+#guestList ul               { margin:0; padding:0;  list-style:none; }
+#guestList .guest_general { padding-top: 15px; }
+#guestList p.ctrlGuest, #guestList p.ctrlGuestRe { border-bottom: 1px dotted #ccc; padding-bottom: 4px; margin-bottom: 13px; height: 15px; }
+#guestList p.ctrlGuestRe { margin-bottom: 7px; }
+#guestList ol li            { border:5px solid #eee;  padding: 0 20px 10px;  margin-bottom:10px; width:/*@post-width:-50=*/ 600px /*@*/; overflow:hidden;}
+#guestList li ul li         { width:/*@post-width:-90=*/ 560px /*@*/; background-color: #f5f5f5;  padding :0 20px 10px;  border:none;  overflow:hidden; margin-top: 15px; }
+#guestList li .name         { float: left; color:#333;  font-weight:bold; letter-spacing: -1px; padding-right: 15px; }
+#guestList li .name a { color:#333; font-weight:bold; }
+#guestList li .date         { float: left; font:0.85em Verdana, Helvetica, Arial, Gulim, sans-serif; color:#999; padding-right: 15px; }
+
+#guestList .control a.modify       { padding-bottom:2px; width: auto; height: 15px; display: block; float: left; text-decoration: none; }
+#guestList .control a.modify span  { }
+#guestList .control a.write        { background:url(images/btn_b_reply.gif) no-repeat; padding-bottom:2px; width: 39px; height: 15px; display: block; float: left; text-decoration: none; }
+#guestList .control a.write span   { display:none;}
+
+
+.clear { clear: both; }
+* html .clear { display: inline; }

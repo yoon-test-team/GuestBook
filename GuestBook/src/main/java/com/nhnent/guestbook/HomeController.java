@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+
 import com.nhnent.guestbook.BoardService;
 import com.nhnent.guestbook.Guest;
 
@@ -21,7 +22,7 @@ import com.nhnent.guestbook.Guest;
  * Handles requests for the application home page.
  */
 @Controller
-public class HomeController {
+public class HomeController extends BoardServiceImpl {
 	
 	private BoardService boardService;
 	
@@ -48,9 +49,35 @@ public class HomeController {
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String list(Locale locale, Model model) {
-		ArrayList<Guest> list = boardService.getList();
+		
+		List<Guest> list = boardService.getList();  // new BoardServiceImpl().getList();
+		
 		model.addAttribute("list",list);
 		return "list";
 	}
+	
+
+	
+	@RequestMapping(value="/write.do", method=RequestMethod.POST)
+	public String write(Guest item,Model model) {
+		
+		
+		
+		
+		model.addAttribute("name", item.getName());
+		model.addAttribute("email", item.getEmail());
+		model.addAttribute("pwd", item.getPwd());
+		model.addAttribute("contents", item.getContents());
+		
+		//boardService.insert(item);
+		
+		System.out.println(item.getName());
+		
+		//new BoardServiceImpl().insert(item);
+		return "list";
+		
+	   // return "redirect:/bbs/list?boardCd=" + article.getBoardCd();
+	} 
+
 	
 }

@@ -2,7 +2,17 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.nhnent.guestbook.GuestMapper">
 	
-    <select id="selectAll" resultType="Guest">
+	<resultMap id="GuestResult" type="com.nhnent.guestbook.Guest">
+		<result property="idx" column="idx" />
+		<result property="name" column="name" />
+		<result property="email" column="email" />
+		<result property="pwd" column="pwd" />
+		<result property="contents" column="contents" />
+		<result property="regdate" column="regdt" />
+		<result property="moddate" column="moddt" />
+	</resultMap>
+
+    <select id="selectAll" resultMap="GuestResult">
     	select * from guestbook
   	</select>
   	

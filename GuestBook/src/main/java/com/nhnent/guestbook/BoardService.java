@@ -1,11 +1,12 @@
 package com.nhnent.guestbook;
-import java.util.ArrayList;
-import java.util.HashMap;
+
+import java.util.List;
+
 import com.nhnent.guestbook.Guest;
 
 public interface BoardService {
 	// 방명록 리스트 
-	public ArrayList<Guest> getList();
+	public List<Guest> getList();
 	// 글 추가 
 	public void insert(Guest item);
 	// 글 수정 
