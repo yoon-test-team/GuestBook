@@ -8,13 +8,12 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 public class BoardServiceImpl implements BoardService {
 	
-	
 	public  List<Guest> getList() {
 		return new BoardDAO().getList();
 	}
 	
-	public void insert(Guest item) {
-	//	boardMapper.insert(item);
+	public Guest insert(Guest item) {
+		return new BoardDAO().insert(item);
 	}
 
 	public void update(Guest item) {
@@ -23,6 +22,16 @@ public class BoardServiceImpl implements BoardService {
 	
 	public void delete(int idx) {
 		//boardMapper.delete(idx);
+	}
+	
+	public int checkPwd(Map<String, Object> param)
+	{
+		return new BoardDAO().checkPwd(param);
+	}
+	
+	public List<Guest> select(Map<String, Object> param)
+	{
+		return new BoardDAO().select(param);
 	}
 	
 	

@@ -16,16 +16,26 @@
     	select * from guestbook
   	</select>
   	
+  	<select id="chekcPassword" parameterType="map" resultType="int">
+		SELECT COUNT(*) FROM guestbook
+		WHERE idx = #{idx}
+		  AND pwd = #{pwd}
+	</select>
+	
+	<select id="select" parameterType="java.util.Map" resultType="java.util.HashMap">
+		SELECT * FROM guestbook
+		WHERE idx = ${idx}
+	</select>
+  	
   	<insert id="insert" parameterType="Guest">
-		INSERT INTO guestbook (	writer, email, pwd, contents, regdt, moddt)
-		VALUES ( #{writer}, #{email}, #{pwd}, #{contents}, SYS_TIMESTAMP,SYS_TIMESTAMP )
+		INSERT INTO guestbook (	name, email, pwd, contents, regdt, moddt)
+		VALUES ( #{name}, #{email}, #{pwd}, #{contents}, SYS_DATETIME,SYS_DATETIME )
 	</insert>
   	
   	<update id="update" parameterType="Guest">
 		UPDATE guestbook 
-		   SET title=#{title},
-		       contents=#{contents},
-		       moddt = SYS_TIMESTAMP
+		   SET contents=#{contents},
+		       moddt = SYS_DATETIME
 	   	 WHERE idx = #{idx}
 	   	   AND pwd = #{pwd}
 	</update>
@@ -33,5 +43,7 @@
 	<delete id="delete" parameterType="int">
 		DELETE FROM guestbook WHERE idx = #{idx}
 	</delete>
+	
+	
   	
 </mapper>

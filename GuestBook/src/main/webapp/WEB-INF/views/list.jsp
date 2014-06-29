@@ -11,6 +11,14 @@
 
 	});
 	
+	function openCheckPwd(idx)
+	{
+		window.open("/guestbook/check?idx="+idx,
+					"EventFrame",
+					"menubar=no,width=430,height=360,toolbar=no");
+		
+	}
+	
 	</script>
 </head>
 
@@ -52,7 +60,7 @@ GuestBook
 					<span class="name">${item.name}</span>
 					<span class="date">${item.regdate}</span>
 					<span class="control"> 
-						<a title="modify" class="modify" href="#">&nbsp;<span>수정/삭제</span></a>
+						<a title="modify" class="modify" href="#" onclick="openCheckPwd(${item.idx});">&nbsp;<span>수정/삭제</span></a>
 					</span>
 				</p>
 				<p class="desc">
