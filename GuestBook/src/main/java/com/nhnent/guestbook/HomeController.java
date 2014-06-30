@@ -84,7 +84,7 @@ public class HomeController extends BoardServiceImpl {
 	}
 
 	
-	@RequestMapping(value="/checkPassword.do",method=RequestMethod.POST)
+	@RequestMapping(value="/chkPassword.do",method=RequestMethod.POST)
 	public @ResponseBody int chkPassword(@RequestParam Map<String, Object> param, ModelMap model)
 	{
 		return service.checkPwd(param);
@@ -97,6 +97,26 @@ public class HomeController extends BoardServiceImpl {
 		return model;
 	}
 	
+
+	@RequestMapping(value="/modify", method=RequestMethod.POST)
+	public String modify(Guest item, Model model) {
+		model.addAttribute("idx",item.getIdx());
+		return "modify";
+	}
+	
+	@RequestMapping(value="/modify.do", method=RequestMethod.POST)
+	public String modifyDo(Guest item, Model model) {
+		model.addAttribute("idx",item.getIdx());
+		service.update(item);
+		
+		// reload list 
+		List<Guest> list = service.getList(); 
+		model.addAttribute("list",list);
+		
+		return "list";
+	}
+
+
 	
 	
 }

@@ -39,7 +39,7 @@ input, textarea { font: 1em dotum; }
 input { height: 16px; }
 table { border-collapse: collapse; border-spacing: 0; }
 
-#guestWrite                 { width:/*@post-width:-50=*/ 600px /*@*/;padding:15px;  background-color:#f5f5f5;  border:1px solid #ddd;}
+#guestWrite                 { width:/*@post-width:-50=*/ 600px /*@*/; padding:15px;  background-color:#f5f5f5;  border:1px solid #ddd;}
 #guestWrite p                { clear: both; padding: 0; margin:0;}
 #guestWrite p.writerInfo label  { width: 80px; float: left; font: 0.85em verdana; padding-top: 2px; vertical-align: middle;  }
 #guestWrite p.writerInfo input  { float: left; width:150px; border: 1px solid #d1d3d4; vertical-align: middle; margin-bottom: 5px; padding: 2px 0 0 8px; }
@@ -59,7 +59,7 @@ table { border-collapse: collapse; border-spacing: 0; }
 #guestList li .name a { color:#333; font-weight:bold; }
 #guestList li .date         { float: left; font:0.85em Verdana, Helvetica, Arial, Gulim, sans-serif; color:#999; padding-right: 15px; }
 
-#guestList .control a.modify       { padding-bottom:2px; width: auto; height: 15px; display: block; float: left; text-decoration: none; }
+#guestList .control a.modify       { padding-bottom:2px; width: auto; height: 15px; display: block; float: right; text-decoration: none; }
 #guestList .control a.modify span  { }
 #guestList .control a.write        { background:url(images/btn_b_reply.gif) no-repeat; padding-bottom:2px; width: 39px; height: 15px; display: block; float: left; text-decoration: none; }
 #guestList .control a.write span   { display:none;}

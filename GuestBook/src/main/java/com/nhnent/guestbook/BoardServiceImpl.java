@@ -16,8 +16,9 @@ public class BoardServiceImpl implements BoardService {
 		return new BoardDAO().insert(item);
 	}
 
-	public void update(Guest item) {
-		//boardMapper.update(item);
+	public Guest update(Guest item) {
+		return new BoardDAO().update(item);
+		
 	}
 	
 	public void delete(int idx) {

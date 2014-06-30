@@ -46,8 +46,8 @@ GuestBook
 	<p>
 		<textarea name="contents" rows="6" cols="50"> </textarea>
 	</p>
-	<p>
-		<input id="btnSubmit"  type="submit" value="안부 남기기">
+	<p style="float: right">
+		<input id="btnSubmit" type="submit" value="저장">
 	</p>
 </div>
 
@@ -60,7 +60,7 @@ GuestBook
 					<span class="name">${item.name}</span>
 					<span class="date">${item.regdate}</span>
 					<span class="control"> 
-						<a title="modify" class="modify" href="#" onclick="openCheckPwd(${item.idx});">&nbsp;<span>수정/삭제</span></a>
+						<a title="modify" class="modify" href="#" onclick="openCheckPwd(${item.idx});">&nbsp;<span>수정</span></a>
 					</span>
 				</p>
 				<p class="desc">

@@ -52,8 +52,7 @@ public class BoardDAO {
 	{
 		SqlSession session = sqlSessionFactory.openSession();
 		try {
-			System.out.println(param.get("idx"));
-			return session.selectOne("com.nhnent.guestbook.GuestMapper.chekcPassword",param);
+			return session.selectOne("com.nhnent.guestbook.GuestMapper.checkPassword",param);
 		}
 		catch(Exception e)
 		{
@@ -80,6 +79,27 @@ public class BoardDAO {
 		finally {
 			session.close();
 		}
+	}
+	
+	
+	public Guest update(Guest item)
+	{
+		SqlSession session = sqlSessionFactory.openSession();
+		try {
+			session.update("com.nhnent.guestbook.GuestMapper.update",item);
+			session.commit();
+			return item;
+		}
+		catch(Exception e)
+		{
+			logger.error("BoardDAO Update Error!! ");
+			session.rollback();
+			return null;
+			
+		}
+		finally {
+			session.close();
+		}	
 	}
 	
 	

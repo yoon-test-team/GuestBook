@@ -15,7 +15,7 @@ public interface BoardService {
 	public Guest insert(Guest item);
 	// 글 수정 
 	@Transactional
-	public void update(Guest item);
+	public Guest update(Guest item);
 	// 글 삭제 
 	@Transactional
 	public void delete(int idx);

@@ -13,19 +13,21 @@
 	</resultMap>
 
     <select id="selectAll" resultMap="GuestResult">
-    	select * from guestbook
+    	select * from guestbook ORDER BY idx DESC
   	</select>
+
+	<select id="select" parameterType="java.util.Map" resultType="java.util.HashMap">
+		SELECT * FROM guestbook
+		WHERE idx = ${idx}
+	</select>
+
   	
-  	<select id="chekcPassword" parameterType="map" resultType="int">
+  	<select id="checkPassword" parameterType="map" resultType="int">
 		SELECT COUNT(*) FROM guestbook
 		WHERE idx = #{idx}
 		  AND pwd = #{pwd}
 	</select>
 	
-	<select id="select" parameterType="java.util.Map" resultType="java.util.HashMap">
-		SELECT * FROM guestbook
-		WHERE idx = ${idx}
-	</select>
   	
   	<insert id="insert" parameterType="Guest">
 		INSERT INTO guestbook (	name, email, pwd, contents, regdt, moddt)
@@ -37,7 +39,6 @@
 		   SET contents=#{contents},
 		       moddt = SYS_DATETIME
 	   	 WHERE idx = #{idx}
-	   	   AND pwd = #{pwd}
 	</update>
 	
 	<delete id="delete" parameterType="int">
