@@ -1,9 +1,10 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page session="false" pageEncoding="utf-8" %>
-<html>
+<html ng-app>
 <head>
 	<title>Home</title>
 	<script src="resources/js/jquery-1.11.1.js"></script>
+	<script src="resources/js/angular.js"></script>
 	<link href="resources/css/style.css" rel="stylesheet" type="text/css" media="all" />
     <script type="text/javascript">
 		
