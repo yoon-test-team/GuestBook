@@ -2,6 +2,8 @@ package com.nhnent.guestbook;
 
 import java.text.DateFormat;
 import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -66,8 +68,11 @@ public class HomeController extends BoardServiceImpl {
 		model.addAttribute("contents", item.getContents());
 		*/
 		
-		// insert 
-		service.insert(item);
+		if(isEmail(item.getEmail()))
+		{
+			// insert 
+			service.insert(item);
+		}
 		
 		// reload list 
 		List<Guest> list = service.getList(); 
@@ -106,7 +111,7 @@ public class HomeController extends BoardServiceImpl {
 	
 	@RequestMapping(value="/modify.do", method=RequestMethod.POST)
 	public String modifyDo(Guest item, Model model) {
-		model.addAttribute("idx",item.getIdx());
+			model.addAttribute("idx",item.getIdx());
 		service.update(item);
 		
 		// reload list 
@@ -117,6 +122,22 @@ public class HomeController extends BoardServiceImpl {
 	}
 
 
+	// 이메일 체크 확인 
+	public static boolean isEmail(String email) {
+	    if(email.length() == 0) {
+	        return false;
+	    }
+	 
+	    String pttn = "^\\D.+@.+\\.[a-z]+";
+	    Pattern p = Pattern.compile(pttn);
+	    Matcher m = p.matcher(email);
+	 
+	    if(m.matches()) {
+	        return true;
+	    }
+	 
+	    return false;
+	}
 	
 	
 }

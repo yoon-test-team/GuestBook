@@ -2,7 +2,7 @@
  * 공통 자바스크립트 
  */
 
-//get Funtion
+//get Funtion : Request Param을 가져온다. 
 function getRequest() {
     if(location.search.length > 1) {
         var get = new Object();
@@ -16,3 +16,10 @@ function getRequest() {
         return false;
     }
 }
+
+// 이메일 체크 
+function IsEmail(email) {
+	  var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+	  return regex.test(email);
+}
+
